@@ -3,9 +3,13 @@ require('colors');
 
 const express = require('express');
 const morgan = require('morgan');
+
+const connectDB = require('./config/db');
 const { errorHandler } = require('./middlewares/errorMiddleware');
 
 const app = express();
+
+connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
