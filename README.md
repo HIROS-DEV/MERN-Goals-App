@@ -4,6 +4,9 @@
 
 For leaning MERN and Redux Toolkit.
 
+## Demo
+https://mern-goalsapp-2022.herokuapp.com/login
+
 ## ScreenShots of the project
 <img src="/image/desktop.png"/>
  
