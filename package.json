@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node server/app.js",
-    "server": "nodemon server/app.js"
+    "server": "nodemon server/app.js",
+    "client": "npm start --prefix client"
   },
   "keywords": [],
   "author": "",
