@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server/app.js",
     "server": "nodemon server/app.js",
-    "client": "npm start --prefix client"
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
   }
 }

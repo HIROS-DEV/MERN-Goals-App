@@ -35,7 +35,7 @@ exports.loginUser = asyncHandler(async (req, res) => {
 	const { email, password } = req.body;
 	const user = await User.findOne({ email });
 	if (user && (await user.matchPassword(password))) {
-		res.json({ id: user._id, email, token: generateToken(user._id) });
+		res.json({ id: user._id, email, name: user.name, token: generateToken(user._id) });
 	} else {
 		res.status(400);
 		throw new Error('Invalid Email or Password');
@@ -44,8 +44,7 @@ exports.loginUser = asyncHandler(async (req, res) => {
 
 //@access Private
 exports.getMe = asyncHandler(async (req, res) => {
-	const { _id, name, email } = await User.findById(req.user.id);
-	res.json({ id: _id, name, email });
+	res.json(req.user);
 });
 
 const generateToken = (id) => {
